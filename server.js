@@ -16,9 +16,9 @@ app.use(
     connection(mysql,{
         host     : 'localhost',
         user     : 'root',
-        password : '',
+        password : 'admin0000',
         port : 3306, //port mysql 
-        database : 'invetsit',
+        database : 'investit', //databse name
         timezone: 'utc',
         debug    : true //set true if you wanna see debug logger
     },'request')

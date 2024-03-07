@@ -1,12 +1,11 @@
-# cat Dockerfile
 FROM mysql:latest
 
 RUN chown -R mysql:root /var/lib/mysql/
 
-ARG MYSQL_DATABASE = 'investit'
-ARG MYSQL_USER  = 'admin'
-ARG MYSQL_PASSWORD = 'admin000'
-ARG MYSQL_ROOT_PASSWORD = 'admin0000'
+ARG MYSQL_DATABASE='investit'
+ARG MYSQL_USER='admin'
+ARG MYSQL_PASSWORD='admin000'
+ARG MYSQL_ROOT_PASSWORD='admin0000'
 
 ENV MYSQL_DATABASE=$MYSQL_DATABASE
 ENV MYSQL_USER=$MYSQL_USER
