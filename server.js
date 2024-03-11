@@ -17,7 +17,7 @@ app.use(
         host     : 'localhost',
         user     : 'root',
         password : 'admin0000',
-        port : 3306, //port mysql 
+        port : 3307, //port mysql 
         database : 'investit', //databse name
         timezone: 'utc',
         debug    : true //set true if you wanna see debug logger

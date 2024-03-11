@@ -12,6 +12,9 @@ ENV MYSQL_USER=$MYSQL_USER
 ENV MYSQL_PASSWORD=$MYSQL_PASSWORD
 ENV MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
 
+RUN echo "[mysqld]" >> /etc/mysql/my.cnf
+RUN echo "default-authentication-plugin=mysql_native_password" >> /etc/mysql/my.cnf
+
 ADD investit.sql /etc/mysql/data.sql
 
 RUN sed -i 's/MYSQL_DATABASE/'$MYSQL_DATABASE'/g' /etc/mysql/data.sql
