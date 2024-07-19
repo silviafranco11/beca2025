@@ -47,6 +47,8 @@ INSERT INTO `areas` (`areaId`, `areaName`, `imagenURL`, `class`) VALUES
 (6, 'Redes y ciberseguridad', 'images/redesyciberseguridad.png', 'box6'),
 (7, 'Sistemas electrónicos avanzados', 'images/sistelectronicos.png', 'box7'),
 (8, 'Tecnologías de semiconductores', 'images/tecsemiconductores.png', 'box8');
+-- (9, 'temp', 'images/tecsemiconductores.png', 'box9');
+
 
 -- --------------------------------------------------------
 

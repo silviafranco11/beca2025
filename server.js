@@ -55,4 +55,4 @@ app.listen(8080)
 
 
 // tell ourselves what's happening
-console.log('Visit me at http://localhost:8080');
+console.log('Visit me at http://localhost:8080 or 8081 if alredy in use (check server.js in this case)');
