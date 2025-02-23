@@ -58,6 +58,7 @@
   img:hover{
     transform: scale(1.2); /* Aumenta el tamaño en un 20% */
     cursor: pointer;
+  }
 }
 
 .box1{
