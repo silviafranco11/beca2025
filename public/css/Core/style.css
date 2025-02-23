@@ -8,6 +8,14 @@
   text-align: center;
   font-size: 25px;
   padding: 20px;
+  img {
+            width: 200px; /* Tamaño inicial */
+            transition: transform 0.3s ease-in-out; /* Efecto suave */
+        }
+
+        img:hover {
+            transform: scale(1.2); /* Aumenta el tamaño en un 20% */
+        }
 }
 .wrapper2 {
   display: grid;
