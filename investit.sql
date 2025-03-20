@@ -335,13 +335,13 @@ ALTER TABLE `relEELISA`
 -- AUTO_INCREMENT de la tabla `areas`
 --
 ALTER TABLE `areas`
-  MODIFY `areaId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Id: identificador del area', AUTO_INCREMENT=9;
+  MODIFY `areaId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Id: identificador del area', AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `centros`
 --
 ALTER TABLE `centros`
-  MODIFY `centroId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Id de centro', AUTO_INCREMENT=8;
+  MODIFY `centroId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Id de centro', AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `EELISA`
@@ -353,7 +353,7 @@ ALTER TABLE `EELISA`
 -- AUTO_INCREMENT de la tabla `lineas`
 --
 ALTER TABLE `lineas`
-  MODIFY `lineaId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Id de línea', AUTO_INCREMENT=75;
+  MODIFY `lineaId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Id de línea', AUTO_INCREMENT=87;
 
 --
 -- Restricciones para tablas volcadas
