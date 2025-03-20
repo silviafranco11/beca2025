@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html lang="es-ES">
+
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ETSI de Telecomunicación: Áreas de investigación</title>
+
+  <!-- Añadir un diseño responsive luego-->
+
+  <link rel="stylesheet" type="text/css" href="typo3temp/stylesheet_f0d4b786b9.css?1598350307" media="all">
+  <link rel="stylesheet" type="text/css" href="typo3conf/ext/ms_footermenu/res/default.css?1441203494" media="all">
+  <link rel="stylesheet" type="text/css"
+    href="typo3conf/ext/sr_language_menu/Resources/Public/StyleSheets/SrLanguageMenu.css?1442912804" media="all">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <link rel="stylesheet" type="text/css" href="typo3conf/ext/powermail/Resources/Public/Css/CssDemo.css?1456242202"
+    media="all">
+
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="robots" content="max-snippet:0">
+  <link rel="icon" href="fileadmin/template/../../favicon.ico">
+
+
+
+  <!-- JS -->
+  <!-- load angular and our custom application -->
+  <script src="js/Core/angular.min.js"></script>
+  <script src="js/Core/ui-bootstrap-tpls-0.14.3.min.js"></script>
+
+  <script src="js/Dev/app.js"></script>
+  <script src="js/Dev/Services/management.js"></script>
+  <!-- Bootstrap core CSS -->
+  <link href="fileadmin/template/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" type="text/css" href="css/Core/style.css">
+  <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css"
+    type="text/css" />
+
+
+</head>
+
+<!-- declare our angular application and angular controller -->
+
+<body class="csc-default" ng-app="App" ng-controller="mainController" style="padding: 20px;">
+  <header>
+    <h1 class="csc-firstHeader" style=text-align:center;">Líneas de
+      Investigación ETSIT
+    </h1>
+  </header>
+  <!-- <p style="text-align: right;padding-right: 20px;">Página actualizada el: 06/04/2023</p> -->
+
+  <div class="panel panel-default" ng-show="variable==0">
+    <p class="text">Bienvenido a la página web donde podrás descubrir más sobre las Líneas de Investigación que se desarrollan en la ETSIT.</p>
+    <p class="text">Pincha sobre las diferentes líneas para saber más</p>
+
+    <div class="wrapper3">
+      <div ng-repeat="area in areas">
+        <h5 class={{area.class}} ng-click="changeTo(area.areaId);"> {{area.areaName}}</h5>
+        <p></p>
+        <img src={{area.imagenURL}} alt={{area.areaName}} width="200" height="200" ng-click="changeTo(area.areaId);" href="#">
+      </div>
+    </div>
+  </div>
+
+
+  <!-- DIV BOX1: COMUNICACIONES 6G Y THZ-->
+  <div ng-show="variable==1">
+    <a class="btn btn-success" ng-click="volver();" href="#">
+      <!-- botón hacia atrás temporal-->
+      <i class="fa fa-arrow-left"></i> Volver a Líneas de Investigación</a>
+    <div ng-repeat="area in areas" ng-if="area.areaId==1">
+      <h2 class={{area.class}}> {{area.areaName}}</h2>
+    </div>
+    <div class="wrapper2">
+      <div ng-repeat="area in areas" ng-if="area.areaId==1">
+        <img src="/images/comunicaciones6g.png" alt={{area.areaName}} width="300" height="300">
+      </div>
+      <div class="borders">
+        <p>Líneas principales:</p>
+        <ul ng-repeat="linea in lineas track by $index" ng-if="linea.areaId ==1" >
+          {{linea.descripcion}}
+        </ul>
+      </div>
+      <div class="borders">
+        <p>Institutos o grupos referentes:</p>
+        <a ng-repeat="centro in centros" ng-if="centro.areaId ==1" href={{centro.centroURL}}>{{centro.centroName}}
+          <p></p>
+        </a>
+      </div>
+      <div class="borders">
+        <p>Áreas EELISA relacionadas:</p>
+        <!-- Convertir en links tal vez-->
+        <p ng-repeat="eelisa in eelisas" ng-if="eelisa.areaId ==1">{{eelisa.eelisaName}} </p>
+          <a href="https://eelisa.eu/">¿Qué es EELISA?</a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- DIV BOX2: ENERGÍA SOLAR Y MEDIOAMBIENTE-->
+  <div ng-show="variable==2">
+    <a class="btn btn-success" ng-click="volver();" href="#">
+      <!-- botón hacia atrás temporal-->
+    <i class="fa fa-arrow-left"></i> Volver a Líneas de Investigación</a>
+    <div ng-repeat="area in areas" ng-if="area.areaId==2">
+      <h2 class={{area.class}}> {{area.areaName}}</h2>
+    </div>
+    <div class="wrapper2">
+      <div  ng-repeat="area in areas" ng-if="area.areaId==2">
+        <img src={{area.imagenURL}} alt={{area.areaName}} width="300" height="300">
+      </div>
+      <div  class="borders" >
+        <p>Líneas principales:</p>
+        <ul  ng-repeat="linea in lineas track by $index" ng-if="linea.areaId ==2" >        
+          {{linea.descripcion}}
+        </ul>
+      </div>
+      <div  class="borders" >
+        <p>Institutos o grupos referentes:</p>
+        <a ng-repeat="centro in centros" ng-if="centro.areaId ==2" href={{centro.centroURL}}>{{centro.centroName}}
+          <p></p>
+        </a>
+      </div>
+      <div  class="borders" >
+        <p>Áreas EELISA relacionadas:</p>
+        <!-- Convertir en links tal vez-->
+        <p    ng-repeat="eelisa in eelisas" ng-if="eelisa.areaId ==2" >{{eelisa.eelisaName}}</p>
+        <a href="https://eelisa.eu/">¿Qué es EELISA?</a>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- DIV BOX3: CIENCIA DE DATOS-->
+  <div ng-show="variable==3">
+    <a class="btn btn-success" ng-click="volver();" href="#">
+      <!-- botón hacia atrás temporal-->
+    <i class="fa fa-arrow-left"></i> Volver a Líneas de Investigación</a>
+    <div ng-repeat="area in areas" ng-if="area.areaId==3">
+      <h2 class={{area.class}}> {{area.areaName}}</h2>
+    </div>
+    <div class="wrapper2">
+      <div  ng-repeat="area in areas" ng-if="area.areaId==3">
+        <img src={{area.imagenURL}} alt={{area.areaName}} width="300" height="300">
+      </div>
+      <div  class="borders" >
+        <p>Líneas principales:</p>
+        <ul  ng-repeat="linea in lineas track by $index" ng-if="linea.areaId ==3" >        
+          {{linea.descripcion}}
+        </ul>
+      </div>
+      <div  class="borders" >
+        <p>Institutos o grupos referentes:</p>
+        <a ng-repeat="centro in centros" ng-if="centro.areaId ==3" href={{centro.centroURL}}>{{centro.centroName}}
+          <p></p>
+        </a>
+      </div>
+      <div  class="borders" >
+        <p>Áreas EELISA relacionadas:</p>
+        <!-- Convertir en links tal vez-->
+        <p    ng-repeat="eelisa in eelisas" ng-if="eelisa.areaId ==3" >{{eelisa.eelisaName}}</p>
+        <a href="https://eelisa.eu/">¿Qué es EELISA?</a>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- DIV BOX4: TECNOLOGÍAS DE SALUD-->
+  <div ng-show="variable==4">
+    <a class="btn btn-success" ng-click="volver();" href="#">
+      <!-- botón hacia atrás temporal-->
+    <i class="fa fa-arrow-left"></i> Volver a Líneas de Investigación</a>
+    <div ng-repeat="area in areas" ng-if="area.areaId==4">
+      <h2 class={{area.class}}> {{area.areaName}}</h2>
+    </div>
+    <div class="wrapper2">
+      <div  ng-repeat="area in areas" ng-if="area.areaId==4">
+        <img src={{area.imagenURL}} alt={{area.areaName}} width="300" height="300">
+      </div>
+      <div  class="borders" >
+        <p>Líneas principales:</p>
+        <ul  ng-repeat="linea in lineas track by $index" ng-if="linea.areaId ==4" >        
+          {{linea.descripcion}}
+        </ul>
+      </div>
+      <div  class="borders" >
+        <p>Institutos o grupos referentes:</p>
+        <a ng-repeat="centro in centros" ng-if="centro.areaId ==4" href={{centro.centroURL}}>{{centro.centroName}}
+          <p></p>
+        </a>
+      </div>
+      <div  class="borders" >
+        <p>Áreas EELISA relacionadas:</p>
+        <!-- Convertir en links tal vez-->
+        <p    ng-repeat="eelisa in eelisas" ng-if="eelisa.areaId ==4" >{{eelisa.eelisaName}}</p>
+        <a href="https://eelisa.eu/">¿Qué es EELISA?</a>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- DIV BOX5: TECNOLOGÍAS CUÁNTICAS-->
+  <div ng-show="variable==5">
+    <a class="btn btn-success" ng-click="volver();" href="#">
+      <!-- botón hacia atrás temporal-->
+    <i class="fa fa-arrow-left"></i> Volver a Líneas de Investigación</a>
+    <div ng-repeat="area in areas" ng-if="area.areaId==5">
+      <h2 class={{area.class}}> {{area.areaName}}</h2>
+    </div>
+    <div class="wrapper2">
+      <div  ng-repeat="area in areas" ng-if="area.areaId==5">
+        <img src={{area.imagenURL}} alt={{area.areaName}} width="300" height="300">
+      </div>
+      <div  class="borders" >
+        <p>Líneas principales:</p>
+        <ul  ng-repeat="linea in lineas track by $index" ng-if="linea.areaId ==5" >        
+          {{linea.descripcion}}
+        </ul>
+      </div>
+      <div  class="borders" >
+        <p>Institutos o grupos referentes:</p>
+        <a ng-repeat="centro in centros" ng-if="centro.areaId ==5" href={{centro.centroURL}}>{{centro.centroName}}
+          <p></p>
+        </a>
+      </div>
+      <div  class="borders" >
+        <p>Áreas EELISA relacionadas:</p>
+        <!-- Convertir en links tal vez-->
+        <p    ng-repeat="eelisa in eelisas" ng-if="eelisa.areaId ==5" >{{eelisa.eelisaName}}</p>
+        <a href="https://eelisa.eu/">¿Qué es EELISA?</a>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- DIV BOX6: REDES Y CIBERSEGURIDAD-->
+  <div ng-show="variable==6">
+    <a class="btn btn-success" ng-click="volver();" href="#">
+      <!-- botón hacia atrás temporal-->
+    <i class="fa fa-arrow-left"></i> Volver a Líneas de Investigación</a>
+    <div ng-repeat="area in areas" ng-if="area.areaId==6">
+      <h2 class={{area.class}}> {{area.areaName}}</h2>
+    </div>
+    <div class="wrapper2">
+      <div  ng-repeat="area in areas" ng-if="area.areaId==6">
+        <img src={{area.imagenURL}} alt={{area.areaName}} width="300" height="300">
+      </div>
+      <div  class="borders" >
+        <p>Líneas principales:</p>
+        <ul  ng-repeat="linea in lineas track by $index" ng-if="linea.areaId ==6" >        
+          {{linea.descripcion}}
+        </ul>
+      </div>
+      <div  class="borders" >
+        <p>Institutos o grupos referentes:</p>
+        <a ng-repeat="centro in centros" ng-if="centro.areaId ==6" href={{centro.centroURL}}>{{centro.centroName}}
+          <p></p>
+        </a>
+      </div>
+      <div  class="borders" >
+        <p>Áreas EELISA relacionadas:</p>
+        <!-- Convertir en links tal vez-->
+        <p    ng-repeat="eelisa in eelisas" ng-if="eelisa.areaId ==6" >{{eelisa.eelisaName}}</p>
+        <a href="https://eelisa.eu/">¿Qué es EELISA?</a>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- DIV BOX7: SIST. ELECTRÓNICOS AVANZADOS-->
+  <div ng-show="variable==7">
+    <a class="btn btn-success" ng-click="volver();" href="#">
+      <!-- botón hacia atrás temporal-->
+    <i class="fa fa-arrow-left"></i> Volver a Líneas de Investigación</a>
+    <div ng-repeat="area in areas" ng-if="area.areaId==7">
+      <h2 class={{area.class}}> {{area.areaName}}</h2>
+    </div>
+    <div class="wrapper2">
+      <div  ng-repeat="area in areas" ng-if="area.areaId==7">
+        <img src={{area.imagenURL}} alt={{area.areaName}} width="300" height="300">
+      </div>
+      <div class="borders" >
+        <p>Líneas principales:</p>
+        <ul  ng-repeat="linea in lineas track by $index" ng-if="linea.areaId ==7" >        
+          {{linea.descripcion}}
+        </ul>
+      </div>
+      <div class="borders" >
+        <p>Institutos o grupos referentes:</p>
+        <a ng-repeat="centro in centros" ng-if="centro.areaId ==7" href={{centro.centroURL}}>{{centro.centroName}}
+          <p></p>
+        </a>
+      </div>
+      <div class="borders" >
+        <p>Áreas EELISA relacionadas:</p>
+        <!-- Convertir en links tal vez-->
+        <p    ng-repeat="eelisa in eelisas" ng-if="eelisa.areaId ==7" >{{eelisa.eelisaName}}</p>
+        <a href="https://eelisa.eu/">¿Qué es EELISA?</a>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- DIV BOX8: TECNOLOGÍAS DE SEMICONDUCTORES-->
+  <div ng-show="variable==8">
+    <a class="btn btn-success" ng-click="volver();" href="#">
+      <!-- botón hacia atrás temporal-->
+    <i class="fa fa-arrow-left"></i> Volver a Líneas de Investigación</a>
+    <div ng-repeat="area in areas" ng-if="area.areaId==8">
+      <h2 class={{area.class}}> {{area.areaName}}</h2>
+    </div>
+    <div class="wrapper2">
+      <div  ng-repeat="area in areas" ng-if="area.areaId==8">
+        <img src={{area.imagenURL}} alt={{area.areaName}} width="300" height="300">
+      </div>
+      <div class="borders" >
+        <p>Líneas principales:</p>
+        <ul  ng-repeat="linea in lineas track by $index" ng-if="linea.areaId ==8" >        
+          {{linea.descripcion}}
+        </ul>
+      </div>
+      <div class="borders" >
+        <p>Institutos o grupos referentes:</p>
+        <a ng-repeat="centro in centros" ng-if="centro.areaId ==8" href={{centro.centroURL}}>{{centro.centroName}}
+          <p></p>
+        </a>
+      </div>
+      <div class="borders" >
+        <p>Áreas EELISA relacionadas:</p>
+        <!-- Convertir en links tal vez-->
+        <p    ng-repeat="eelisa in eelisas" ng-if="eelisa.areaId ==8" >{{eelisa.eelisaName}}</p>
+        <a href="https://eelisa.eu/">¿Qué es EELISA?</a>
+      </div>
+    </div>
+  </div>
+
+<!-- DIV BOX9: MULTIMEDIA-->
+<div ng-show="variable==9">
+  <a class="btn btn-success" ng-click="volver();" href="#">
+    <!-- botón hacia atrás temporal-->
+  <i class="fa fa-arrow-left"></i> Volver a Líneas de Investigación</a>
+  <div ng-repeat="area in areas" ng-if="area.areaId==9">
+    <h2 class={{area.class}}> {{area.areaName}}</h2>
+  </div>
+  <div class="wrapper2">
+    <div  ng-repeat="area in areas" ng-if="area.areaId==8">
+      <img src={{area.imagenURL}} alt={{area.areaName}} width="300" height="300">
+    </div>
+    <div class="borders" >
+      <p>Líneas principales:</p>
+      <ul  ng-repeat="linea in lineas track by $index" ng-if="linea.areaId ==9" >        
+        {{linea.descripcion}}
+      </ul>
+    </div>
+    <div class="borders" >
+      <p>Institutos o grupos referentes:</p>
+      <a ng-repeat="centro in centros" ng-if="centro.areaId ==9" href={{centro.centroURL}}>{{centro.centroName}}
+        <p></p>
+      </a>
+    </div>
+    <div class="borders" >
+      <p>Áreas EELISA relacionadas:</p>
+      <!-- Convertir en links tal vez-->
+      <p    ng-repeat="eelisa in eelisas" ng-if="eelisa.areaId ==9" >{{eelisa.eelisaName}}</p>
+      <a href="https://eelisa.eu/">¿Qué es EELISA?</a>
+    </div>
+  </div>
+</div>
+
+
+
+ 
+</body>
+
+</html>
