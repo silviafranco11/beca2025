@@ -74,6 +74,7 @@ INSERT INTO `centros` (`centroId`, `centroName`, `centroURL`) VALUES
 (5, 'CTB', ' '),
 (6, 'CEMDATIC', 'https://www.etsit.upm.es/investigacion/institutos-y-centros-de-investigacion/cemdatic.html'),
 (7, 'CeDINT', 'https://www.etsit.upm.es/investigacion/institutos-y-centros-de-investigacion/cedint.html');
+(8, 'GB2S', '');
 
 -- --------------------------------------------------------
 
