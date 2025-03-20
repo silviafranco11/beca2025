@@ -47,7 +47,7 @@ INSERT INTO `areas` (`areaId`, `areaName`, `imagenURL`, `class`) VALUES
 (6, 'Redes y ciberseguridad', 'images/redesyciberseguridad.png', 'box6'),
 (7, 'Sistemas electrónicos avanzados', 'images/sistelectronicos.png', 'box7'),
 (8, 'Tecnologías de semiconductores', 'images/tecsemiconductores.png', 'box8');
--- (9, 'temp', 'images/tecsemiconductores.png', 'box9');
+(9, 'Multimedia', 'images/multimedia.png', 'box9');
 
 
 -- --------------------------------------------------------
@@ -194,6 +194,21 @@ INSERT INTO `lineas` (`lineaId`, `areaId`, `descripcion`) VALUES
 (72, 8, 'Metaestructuras ópticas'),
 (73, 8, 'Nanotecnología'),
 (74, 8, 'Sistemas híbridos integrados fotónicos');
+(75, 9, 'Radiocomunicaciones digitales');
+(76, 9, 'Sistemas de banda ancha');
+(77, 9, 'Análisis de señal');
+(78, 9, 'Interfaces hombre-máquina');
+(79, 9, 'Reconocimiento de voz');
+(80, 9, 'Síntesis de voz');
+(81, 9, 'Tratamieneto de señal de audio');
+(82, 9, 'Análisis de imágenes y vídeo para extracción de características');
+(83, 9, 'Televisión digital y televisión de alta definición digital');
+(84, 9, 'Gráficos 3D y realidad aumentada');
+(85, 9, 'Teoría y métodos de tratamiento digital de imágenes');
+(86, 9, 'Codificación y transmisión de información visual');
+(87, 9, 'Extracción de información tridimensaional');
+
+
 
 -- --------------------------------------------------------
 
@@ -230,6 +245,7 @@ INSERT INTO `relCentros` (`areaId`, `centroId`) VALUES
 (8, 1),
 (8, 4),
 (8, 6);
+(9, 1);
 
 -- --------------------------------------------------------
 
@@ -260,6 +276,8 @@ INSERT INTO `relEELISA` (`eelisaId`, `areaId`) VALUES
 (2, 6),
 (6, 7),
 (7, 8);
+(4, 9);
+(2, 9);
 
 --
 -- Índices para tablas volcadas
