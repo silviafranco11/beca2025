@@ -9,6 +9,7 @@ MyApp.controller('mainController', function ($scope, Management) {
     Management.allAreas()
         .success(function (data) {
            // alert(JSON.stringify(data));
+           console.log("Áreas cargadas:", data);
            $scope.areas=data;
         });
 

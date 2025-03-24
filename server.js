@@ -1,24 +1,33 @@
 //load the express package and create our app
+require('dotenv').config();  // Carga las variables de entorno desde el archivo .env
+
 var express    = require('express');        // call express
 var app        = express();                 // define our app using express
 var bodyParser = require('body-parser');    // get body-parser
 var path       = require('path');
 
+
 // get the http and filesystem modules
 var http = require('http');
+
+console.log(process.env.MYSQL_USER);
+console.log(process.env.MYSQL_ROOT_PASSWORD);
+console.log(process.env.MYSQL_DATABASE);
+
 
 /*MYSQL connection*/
 var connection  = require('express-myconnection'),
     mysql = require('mysql');
 
+
 app.use(
 
     connection(mysql,{
         host     : 'localhost',
-        user     : 'root',
-        password : 'admin0000',
+        user     : process.env.MYSQL_USER,
+        password : process.env.MYSQL_ROOT_PASSWORD,
         port : 3307, //port mysql 
-        database : 'investit', //databse name
+        database : process.env.MYSQL_DATABASE, //database name
         timezone: 'utc',
         debug    : true //set true if you wanna see debug logger
     },'request')
@@ -52,6 +61,13 @@ app.get('*', function(req, res) {
 
 //start the server
 app.listen(8080)
+
+// tell us which database are we using
+app.get('/checkdb', function (req, res) {
+    console.log('La base de datos configurada es: ' + req.mysql.config.database);
+    res.send('Conexión a la base de datos exitosa!');
+});
+
 
 
 // tell ourselves what's happening

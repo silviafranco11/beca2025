@@ -27,6 +27,11 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `areas`
 --
 
+
+
+CREATE USER 'myuser'@'%' IDENTIFIED WITH mysql_native_password BY 'admin0000';
+
+
 CREATE TABLE `areas` (
   `areaId` int(10) UNSIGNED NOT NULL COMMENT 'Id: identificador del area',
   `areaName` varchar(500) NOT NULL COMMENT 'Nombre del area',
@@ -46,7 +51,7 @@ INSERT INTO `areas` (`areaId`, `areaName`, `imagenURL`, `class`) VALUES
 (5, 'Tecnologías cuánticas', 'images/teccuanticas.png', 'box5'),
 (6, 'Redes y ciberseguridad', 'images/redesyciberseguridad.png', 'box6'),
 (7, 'Sistemas electrónicos avanzados', 'images/sistelectronicos.png', 'box7'),
-(8, 'Tecnologías de semiconductores', 'images/tecsemiconductores.png', 'box8');
+(8, 'Tecnologías de semiconductores', 'images/tecsemiconductores.png', 'box8'),
 (9, 'Multimedia', 'images/multimedia.png', 'box9');
 
 
@@ -73,7 +78,7 @@ INSERT INTO `centros` (`centroId`, `centroName`, `centroURL`) VALUES
 (4, 'ISOM', 'https://www.etsit.upm.es/investigacion/institutos-y-centros-de-investigacion/isom.html'),
 (5, 'CTB', ' '),
 (6, 'CEMDATIC', 'https://www.etsit.upm.es/investigacion/institutos-y-centros-de-investigacion/cemdatic.html'),
-(7, 'CeDINT', 'https://www.etsit.upm.es/investigacion/institutos-y-centros-de-investigacion/cedint.html');
+(7, 'CeDINT', 'https://www.etsit.upm.es/investigacion/institutos-y-centros-de-investigacion/cedint.html'),
 (8, 'GB2S', '');
 
 -- --------------------------------------------------------
@@ -194,19 +199,19 @@ INSERT INTO `lineas` (`lineaId`, `areaId`, `descripcion`) VALUES
 (71, 8, 'Plasmónica'),
 (72, 8, 'Metaestructuras ópticas'),
 (73, 8, 'Nanotecnología'),
-(74, 8, 'Sistemas híbridos integrados fotónicos');
-(75, 9, 'Radiocomunicaciones digitales');
-(76, 9, 'Sistemas de banda ancha');
-(77, 9, 'Análisis de señal');
-(78, 9, 'Interfaces hombre-máquina');
-(79, 9, 'Reconocimiento de voz');
-(80, 9, 'Síntesis de voz');
-(81, 9, 'Tratamieneto de señal de audio');
-(82, 9, 'Análisis de imágenes y vídeo para extracción de características');
-(83, 9, 'Televisión digital y televisión de alta definición digital');
-(84, 9, 'Gráficos 3D y realidad aumentada');
-(85, 9, 'Teoría y métodos de tratamiento digital de imágenes');
-(86, 9, 'Codificación y transmisión de información visual');
+(74, 8, 'Sistemas híbridos integrados fotónicos'),
+(75, 9, 'Radiocomunicaciones digitales'),
+(76, 9, 'Sistemas de banda ancha'),
+(77, 9, 'Análisis de señal'),
+(78, 9, 'Interfaces hombre-máquina'),
+(79, 9, 'Reconocimiento de voz'),
+(80, 9, 'Síntesis de voz'),
+(81, 9, 'Tratamieneto de señal de audio'),
+(82, 9, 'Análisis de imágenes y vídeo para extracción de características'),
+(83, 9, 'Televisión digital y televisión de alta definición digital'),
+(84, 9, 'Gráficos 3D y realidad aumentada'),
+(85, 9, 'Teoría y métodos de tratamiento digital de imágenes'),
+(86, 9, 'Codificación y transmisión de información visual'),
 (87, 9, 'Extracción de información tridimensaional');
 
 
@@ -249,7 +254,7 @@ INSERT INTO `relCentros` (`areaId`, `centroId`) VALUES
 (7, 7),
 (8, 1),
 (8, 4),
-(8, 6);
+(8, 6),
 (9, 1);
 
 -- --------------------------------------------------------
@@ -280,8 +285,8 @@ INSERT INTO `relEELISA` (`eelisaId`, `areaId`) VALUES
 (4, 6),
 (2, 6),
 (6, 7),
-(7, 8);
-(4, 9);
+(7, 8),
+(4, 9),
 (2, 9);
 
 --

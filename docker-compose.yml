@@ -5,6 +5,8 @@ services:
     cap_add:
       - SYS_NICE
     restart: always
+    env_file:
+      - .env
     environment:
       - MYSQL_DATABASE=investit
       - MYSQL_ROOT_PASSWORD=admin0000
@@ -14,7 +16,7 @@ services:
       - '3306:3306'
     volumes:
       - db:/var/lib/mysql
-      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./investit.sql:/docker-entrypoint-initdb.d/investit.sql
 volumes:
   db:
     driver: local

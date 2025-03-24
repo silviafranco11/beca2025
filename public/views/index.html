@@ -59,6 +59,7 @@
   <!-- <p style="text-align: right;padding-right: 20px;">Página actualizada el: 06/04/2023</p> -->
 
   <div class="panel panel-default" ng-show="variable==0">
+
     <p class="text">Bienvenido a la página web donde podrás descubrir más sobre las Líneas de Investigación que se desarrollan en la ETSIT.</p>
     <p class="text">Pincha sobre las diferentes líneas para saber más</p>
 
@@ -104,6 +105,7 @@
       </div>
     </div>
   </div>
+
 
 
   <!-- DIV BOX2: ENERGÍA SOLAR Y MEDIOAMBIENTE-->
@@ -353,6 +355,8 @@
     </div>
   </div>
 
+
+
 <!-- DIV BOX9: MULTIMEDIA-->
 <div ng-show="variable==9">
   <a class="btn btn-success" ng-click="volver();" href="#">
@@ -362,7 +366,7 @@
     <h2 class={{area.class}}> {{area.areaName}}</h2>
   </div>
   <div class="wrapper2">
-    <div  ng-repeat="area in areas" ng-if="area.areaId==8">
+    <div  ng-repeat="area in areas" ng-if="area.areaId==9">
       <img src={{area.imagenURL}} alt={{area.areaName}} width="300" height="300">
     </div>
     <div class="borders" >

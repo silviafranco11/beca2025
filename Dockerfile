@@ -2,18 +2,17 @@ FROM mysql:latest
 
 RUN chown -R mysql:root /var/lib/mysql/
 
-ARG MYSQL_DATABASE='investit'
-ARG MYSQL_USER='admin'
-ARG MYSQL_PASSWORD='admin000'
-ARG MYSQL_ROOT_PASSWORD='admin0000'
+ARG MYSQL_DATABASE
+ARG MYSQL_USER
+ARG MYSQL_PASSWORD
+ARG MYSQL_ROOT_PASSWORD
 
 ENV MYSQL_DATABASE=$MYSQL_DATABASE
 ENV MYSQL_USER=$MYSQL_USER
 ENV MYSQL_PASSWORD=$MYSQL_PASSWORD
 ENV MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
 
-RUN echo "[mysqld]" >> /etc/mysql/my.cnf
-RUN echo "default-authentication-plugin=mysql_native_password" >> /etc/mysql/my.cnf
+RUN echo -e "[mysqld]\ndefault-authentication-plugin=mysql_native_password" >> /etc/mysql/my.cnf
 
 ADD investit.sql /etc/mysql/data.sql
 
